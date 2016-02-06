@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<title>Pomodoro Clock</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+		<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet" integrity="sha256-MfvZlkHCEqatNoGiOXveE8FIwMzZg4W85qfrfIFBfYc= sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+		<link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+		<link rel="stylesheet" type="text/css" href="main.css">
+	</head>
+	<body ng-app="myApp">
+		<div class="container" ng-controller="mainCtrl">
+			<h1 id="heading" class="shadow">POMODORO CL<i class="fa fa-clock-o"></i>CK</h1>
+			<div class="row">
+				<div class="col-md-6">
+					<h3 id="bl">Break Length</h3>
+					<h4><span class="break">{{break}}</span></h4>
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored minus-break" ng-click="breakLength(-1)">
+					  <i class="fa fa-minus"></i>
+					</button>
+					<!-- Accent-colored raised button with ripple -->
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored plus-break" ng-click="breakLength(1)">
+					  <i class="fa fa-plus"></i>
+					</button>
+				</div>
+				<div class="col-md-6">
+					<h3 id="sl">Session Length</h3>
+					<h4><span class="session">{{session}}</span></h4>
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored minus-session" ng-click="sessionLength(-1)">
+					  <i class="fa fa-minus"></i>
+					</button>
+					<!-- Accent-colored raised button with ripple -->
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored plus-session" ng-click="sessionLength(1)">
+					  <i class="fa fa-plus"></i>
+					</button>
+				</div>
+				<div class="session-clock">
+					<h3 id="cl">{{status}}</h3>
+					<h3><span class="min">{{timer}}</span></h3>
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored start" ng-click="startTimer()">
+					  <i class="fa fa-play"></i>{{pausebutton}}</span>
+					</button>
+					<button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--colored reset" ng-click="reset()">
+					  <i class="fa fa-refresh"></i> Reset
+					</button>
+				</div>
+				<footer><h4 id="footer">Created by Atul Sharma &copy</h4></footer>
+				<h3><a href="https://github.com/The-Atul-Sharma" target="_blank"><i class="fa fa-github"></i></a>
+					<a href="https://in.linkedin.com/in/theatsharma" target="_blank"><i class="fa fa-linkedin"></i></a>
+					<a href="https://twitter.com/theatsharma" target="_blank"><i class="fa fa-twitter"></i></a>
+				</h3>
+			</div>
+		</div>
+		<script src="main.js"></script>
+		<script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+	</body>
+</html>
